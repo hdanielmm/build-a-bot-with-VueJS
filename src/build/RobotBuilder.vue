@@ -8,15 +8,15 @@
           {{ selectedRobot.head.title }}
           <span class="sale" v-if="selectedRobot.head.onSale">Sale!</span>
         </div> -->
-      <PartSelector />
+      <PartSelector :parts="availableParts.heads" position="top"/>
     </div>
     <div class="middle-row">
-      <PartSelector />
-      <PartSelector />
-      <PartSelector />
+      <PartSelector :parts="availableParts.arms" position="left"/>
+      <PartSelector :parts="availableParts.torsos" position="center"/>
+      <PartSelector :parts="availableParts.arms" position="right"/>
     </div>
     <div class="bottom-row">
-      <PartSelector />
+      <PartSelector :parts="availableParts.bases" position="bottom"/>
     </div>
     <div v-if="cart.length">
       <h1>Cart</h1>
